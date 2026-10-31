@@ -9,6 +9,7 @@
 
 A comprehensive data engineering, analytics, and interactive application project developed for **Data Centric Programming (TU850 / Year 2)** at **Technological University Dublin**.
 
+* **Lecturer**: Dr Bryan Duggan (DATA2005 Data-Centric Programming)
 * **Author**: Winnie Tan (Year 2 BSc in Data Science and Artificial Intelligence)
 * **University**: Technological University Dublin (TU Dublin)
 * **Topic**: Daily living and relocation expenses of an international university student in Dublin, Ireland.
