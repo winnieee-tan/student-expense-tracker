@@ -25,9 +25,8 @@ A comprehensive data engineering, analytics, and interactive application project
 6. [Data Analysis & Visualizations](#-data-analysis--visualizations-rubric-part-3--25)
 7. [Interactive Tkinter Application](#-interactive-tkinter-application-rubric-part-4--15)
 8. [Reflections & Insights on Data Collection](#-reflections--insights-on-data-collection)
-9. [Oral Presentation & In-Class Demo Guide](#-oral-presentation--in-class-demo-guide)
-10. [Installation & Execution Guide](#-installation--execution-guide)
-11. [Academic Integrity & Rubric Alignment](#-academic-integrity--rubric-alignment)
+9. [Installation & Execution Guide](#-installation--execution-guide)
+10. [Academic Integrity & Rubric Alignment](#-academic-integrity--rubric-alignment)
 
 ---
 
@@ -249,23 +248,6 @@ The interactive desktop application is implemented in `src/app.py` (launched via
 2. **Micro-Transactions vs. Fixed Costs**: While daily coffees (€4.00 – €4.50) feel noticeable day-to-day, they constituted less than 2% of total capital. Rent and tech equipment dwarf discretionary spending by an order of magnitude.
 3. **Multi-Currency Behavioral Effects**: Using Wise for Malaysian Ringgit (MYR) to Euro (EUR) conversions created a psychological awareness of exchange rates that influenced when bulk grocery purchases were made.
 4. **Data Cleanliness Challenges**: Handling currency symbols (`€1,156.00`), varied date formats, and categorizing borderline items (e.g. is a laptop charger an "essential" need for a Computer Science student? Yes!) highlighted the real-world necessity of data preprocessing and validation rules.
-
----
-
-## 🎤 Oral Presentation & In-Class Demo Guide
-
-This section provides concise, high-scoring answers to the standard code defense and evaluation questions:
-
-| Evaluation Question | High-Scoring Response & Rationale |
-| :--- | :--- |
-| **1. Why did you choose this topic?** | *"As an international undergraduate relocating from Malaysia to Dublin for Year 2 at TU Dublin, managing finances in a high-cost capital city is critical. I wanted an authentic, daily system to track living costs, monitor foreign exchange conversion via Wise/AIB, and distinguish fixed relocation overheads from true day-to-day burn rate."* |
-| **2. How did you collect your data?** | *"I manually logged every transaction in real-time between 31 August and 31 October 2026. Data was gathered through three banking apps (Wise for foreign exchange/daily contactless, AIB Bank for rent and laptop payments, and Revolut for dining and coffees) as well as physical merchant receipts from Tesco, Lidl, and Rongs Asian market. No synthetic or AI-generated data was used."* |
-| **3. Why did you use SQLite?** | *"SQLite is a lightweight, zero-configuration relational database engine embedded directly with Python. It allows structured tabular storage with strict schema constraints (`CHECK(amount >= 0)`, `NOT NULL`), indexes for rapid query performance, and allows us to run standard SQL aggregations (`GROUP BY`, `SUM`, `AVG`, `ORDER BY`) which are much safer and more scalable than parsing raw CSV files repeatedly."* |
-| **4. Why pandas?** | *"Pandas provides vectorised data structures (DataFrames) and built-in datetime functionality. It makes grouping, time-series cumulative sums (`cumsum()`), statistical calculations, and filtering fast, readable, and intuitive in just 1–2 lines of code."* |
-| **5. Why matplotlib?** | *"Matplotlib gives complete programmatic control over visual styling, axes formatting (currency formatting via `ticker.StrMethodFormatter`), subplots, and direct export to high-resolution publication PNGs (300 DPI) as well as embedding directly into our Tkinter GUI."* |
-| **6. What did you discover?** | *"Key findings from the 52 records: (1) Total tracked spend was €5,509.94 across 62 days. (2) Student accommodation at Beckett House (€1,156/month) dominates over 60% of total outlay. (3) True daily living cost (excluding rent and one-off laptop) is ~€32.93/day. (4) 78% of expenses were strictly essential Needs, proving disciplined spending. (5) Grocery bills are tightly managed at €10–€25/week by utilizing budget supermarkets (Lidl & Tesco)."* |
-| **7. What difficulties did you face?** | *"Three main challenges: (1) Data formatting: Raw bank exports had currency symbols like `'€1,156.00'` with commas and euro signs, and dates in mixed formats (`DD/MM/YYYY` vs `YYYY-MM-DD`). Built Python cleaning functions to sanitize numerical values and standardize ISO dates. (2) Boundary classifications: Deciding whether items like a laptop charger or yoga class are 'Needs' vs 'Wants'. Defined a clear rule: academic survival & basic sustenance = Need; recreational and lifestyle = Want. (3) GUI synchronization: Dynamically refreshing Tkinter's Treeview table, KPI cards, and SQLite database after inserting new transactions in real-time."* |
-| **8. What would you improve?** | *"Future enhancements: (1) Add monthly budget threshold warnings (e.g. alert when grocery spend exceeds €150/month). (2) Automated receipt parsing using OCR / computer vision to scan Lidl/Tesco receipts automatically. (3) Multi-currency conversion tracking to log real-time exchange rate fluctuations (MYR to EUR)."* |
 
 ---
 
